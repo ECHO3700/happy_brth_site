@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Соня | Дарк фэнтези · Книжное испытание</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dark-forest-bg">
+    <div class="trees"></div>
+    <div class="mist"></div>
+</div>
+
+<!-- СТАТИЧНЫЙ СЛОЙ ГИФОК - ТОЛЬКО В ПЕРВОМ ОКНЕ -->
+<div class="static-gifs-layer" id="staticGifsLayer">
+    <img class="static-gif-item static-gif-1" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDdsajFwdWgwM3J1MDRxdTNwemJjYXJzaXpsYzFtMTI2YmV6aTdqNCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/8IIV99S5P5deIbItWO/giphy.gif" alt="dark1" loading="lazy">
+    <img class="static-gif-item static-gif-2" src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NG10b3J0MXlkNGJ2ZHVlcnZyaXp4c295Zm9teGh1ejRpMjJ5dDRqdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/C8ih1zB9e9KJLySClx/giphy.gif" alt="dark2" loading="lazy">
+    <img class="static-gif-item static-gif-3" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZ0bHpnNXNha2J0YW93ZDd3ejNzZTQ5dDdidnFtc2FpZHB4cnhpbCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/aQwvKKi4Lv3t63nZl9/giphy.gif" alt="dark3" loading="lazy">
+    <img class="static-gif-item static-gif-4" src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NzV6anQ2eXBrZ21saG5veHFlM24xaGp3NTkzOWowbzdpNXEzcjFyYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/AiFGUnZ7D3gM1rcEVb/giphy.gif" alt="dark4" loading="lazy">
+    <img class="static-gif-item static-gif-5" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJycW5pcTRvdzl0MGY1Mmc3ZG1ieGNhejl5N3M1c2NyajZqOTh1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wX4DlOApDwsQwHDoiI/giphy.gif" alt="dark5" loading="lazy">
+    <img class="static-gif-item static-gif-6" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExenl1M2NmYzJ1emNuejVkMTR1MTVwazJyb3BrNnN0Y2RzYTBnbjZxMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y5GlGjo5ut42cMEapq/giphy.gif" alt="dark6" loading="lazy">
+</div>
+
+<div id="mainScreen" class="main-screen">
+    <div class="button-area" id="buttonArea">
+        <button id="giftBtn" class="gift-button">🌙 ПОЛУЧИТЬ ПОДАРОК 🖤</button>
+        <div id="hintMessage" class="hint-text" style="display: none;"></div>
+    </div>
+</div>
+
+<div id="transitionScreen" class="transition-screen">
+    <img class="transition-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXo1amk4bWp4eTR2aHluNXg1ZWNwbXpweHd6eDJiaHVhYXViMmV3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZqbBT64ECtjy/giphy.gif" alt="dark portal">
+    <div class="transition-text">⚔️ ТЕБЕ ОТКРЫВАЮТСЯ ВРАТА... ⚔️</div>
+</div>
+
+<div id="testScreen" class="test-screen">
+    <div class="test-container">
+        <div class="test-header">
+            <h2>⚔️ РЕШИ ТЕСТ ДЛЯ ПОЛУЧЕНИЯ ПОДАРКА ⚔️</h2>
+        </div>
+        
+        <div id="insideTestPanel" class="test-panel-inside">
+            <div class="test-panel-title">🔮 ТЕСТ-РЕЖИМ (РАЗРАБОТЧИКА)</div>
+            <div class="test-panel-row">
+                <input type="password" id="insidePanelPassword" placeholder="пароль" autocomplete="off">
+                <button id="insideUnlockBtn">🔓 РАЗБЛОК</button>
+            </div>
+            <div id="insideTestButtons" style="display: none;">
+                <div class="test-buttons-group">
+                    <button id="insideAutoPass" class="test-pass">✅ 100%</button>
+                    <button id="insideAutoFail" class="test-fail">❌ 0%</button>
+                    <button id="inside70Percent" class="test-70">🎯 70%</button>
+                </div>
+            </div>
+            <div id="insideLockStatus" class="lock-status">🔒 ЗАБЛОКИРОВАНО</div>
+        </div>
+        
+        <div id="questionsContainer"></div>
+        <div class="submit-block">
+            <button id="submitQuiz" class="submit-test">🍂 ПРОВЕРИТЬ РЕЗУЛЬТАТ 🍂</button>
+        </div>
+        <div id="resultBlock" class="result-area"></div>
+        <footer>🌲 Древний лес хранит твои ответы, Соня 🌲</footer>
+    </div>
+</div>
+
+<div id="epicModal" class="epic-modal">
+    <div class="epic-content">
+        <img class="epic-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDYwMnZmcmcwbTNpOHpmZGN3cnVjdGlsdnU2M2w1eWJqYTd5eTAyayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7wtG3CLV1YJXgeyw8o/giphy.gif" alt="dark celebration">
+        <h1>⚔️ СОНЯ, ТЫ ПРОШЛА ТЕСТ ⚔️</h1>
+        <p>💀 Ебать время в пустую проебала, молодец 💀</p>
+        <button class="close-epic" id="closeEpicBtn">🌑 ПРИНЯТЬ 🌑</button>
+    </div>
+</div>
+
+<div id="caesarModal" class="caesar-modal">
+    <div class="caesar-content">
+        <img class="caesar-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGU3YWI5bDV1dHMzaDdidDNrcnp6cHhwZnloaGttd25ueGxoc3ducyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DfSXiR60W9MVq/giphy.gif" alt="cipher">
+        <h2>🔐 ТАЙНОЕ ПОСЛАНИЕ 🔐</h2>
+        <div class="caesar-message">Ты думала это все? Хуй там плавал. Реши шифр цезаря :</div>
+        <div class="caesar-encrypted">чгмлхнг нхнгугьл</div>
+        <input type="text" id="caesarAnswer" placeholder="Введите расшифрованную фразу..." autocomplete="off">
+        <div>
+            <button id="caesarSubmitBtn">⚔️ ПРОВЕРИТЬ ⚔️</button>
+            <button id="caesarCloseBtn">🌑 ЗАКРЫТЬ</button>
+        </div>
+        <div id="caesarFeedback" class="caesar-feedback"></div>
+    </div>
+</div>
+
+<div id="finalModal" class="final-modal">
+    <div class="final-content">
+        <img class="final-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2lmeWgzdWcwd3NmMHdvZGFzbzE5OGsxYjBwZ3A0eng2d2s5Y2dpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O9mzywwlZaQGMrH1z5/giphy.gif" alt="happy celebration">
+        <div class="final-text">
+            🎉 МОЛОДЕЦ!!! 🎉<br>
+            Отправь мне в лс слово: <span>"ФИГУЛЬКА"</span>
+        </div>
+        <button class="final-close" id="finalCloseBtn">🌑 ЗАКРЫТЬ 🌑</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
