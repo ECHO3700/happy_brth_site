@@ -178,8 +178,7 @@ closeEpicBtn.addEventListener('click', hideEpic);
 caesarClose.addEventListener('click', hideCaesar);
 finalClose.addEventListener('click', hideFinal);
 
-// НОВЫЙ ШИФР — правильный ответ "дон гандон"
-// Зашифрованный текст сдвигом +3: "зср ёгрзср"
+// ПРАВИЛЬНЫЙ ШИФР — ответ "дон гандон", шифротекст "ЕПО ДБОЕПО" (сдвиг +1)
 caesarSubmit.addEventListener('click', () => {
     const userAnswer = caesarAnswer.value.trim().toLowerCase();
     const correctAnswer = "дон гандон";
@@ -193,7 +192,7 @@ caesarSubmit.addEventListener('click', () => {
             setTimeout(() => { showFinal(); }, 200);
         }, 800);
     } else {
-        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: шифр Цезаря со сдвигом 3';
+        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: сдвиг +1 (Е→Д, П→О, О→Н, Д→Г, Б→А, О→Н, Е→Д, П→О, О→Н)';
         caesarFeedback.style.color = '#e0a060';
         caesarAnswer.value = '';
     }
@@ -254,4 +253,4 @@ document.getElementById('inside70Percent').addEventListener('click', () => compl
 document.getElementById('submitQuiz').addEventListener('click', showResult);
 
 buildQuiz();
-console.log('🌲 Лесной храм открыт. Пароль: 999. Шифр: зср ёгрзср → дон гандон (сдвиг +3)');
+console.log('🌲 Лесной храм открыт. Пароль: 999. Шифр: ЕПО ДБОЕПО → дон гандон (сдвиг +1)');
