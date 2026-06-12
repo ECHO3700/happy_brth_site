@@ -178,11 +178,11 @@ closeEpicBtn.addEventListener('click', hideEpic);
 caesarClose.addEventListener('click', hideCaesar);
 finalClose.addEventListener('click', hideFinal);
 
-// Шифр Цезаря — правильный ответ "фаликула кукарачи"
-// Зашифрованный текст сдвигом +3: "хголнцог нцнгугшл"
+// НОВЫЙ ШИФР — правильный ответ "дон гандон"
+// Зашифрованный текст сдвигом +3: "зср ёгрзср"
 caesarSubmit.addEventListener('click', () => {
     const userAnswer = caesarAnswer.value.trim().toLowerCase();
-    const correctAnswer = "фаликула кукарачи";
+    const correctAnswer = "дон гандон";
     if (userAnswer === correctAnswer) {
         caesarFeedback.innerHTML = '✅ ВЕРНО! Ты взломала шифр!';
         caesarFeedback.style.color = '#a8e06e';
@@ -193,7 +193,7 @@ caesarSubmit.addEventListener('click', () => {
             setTimeout(() => { showFinal(); }, 200);
         }, 800);
     } else {
-        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: шифр Цезаря со сдвигом 3 (а→г, б→д, ф→х...)';
+        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: шифр Цезаря со сдвигом 3';
         caesarFeedback.style.color = '#e0a060';
         caesarAnswer.value = '';
     }
@@ -254,4 +254,4 @@ document.getElementById('inside70Percent').addEventListener('click', () => compl
 document.getElementById('submitQuiz').addEventListener('click', showResult);
 
 buildQuiz();
-console.log('🌲 Лесной храм открыт. Пароль: 999. Шифр: хголнцог нцнгугшл → фаликула кукарачи (сдвиг +3)');
+console.log('🌲 Лесной храм открыт. Пароль: 999. Шифр: зср ёгрзср → дон гандон (сдвиг +3)');
