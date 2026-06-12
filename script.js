@@ -178,6 +178,7 @@ closeEpicBtn.addEventListener('click', hideEpic);
 caesarClose.addEventListener('click', hideCaesar);
 finalClose.addEventListener('click', hideFinal);
 
+// Исправленный шифр Цезаря — правильный ответ "фаликула кукарачи"
 caesarSubmit.addEventListener('click', () => {
     const userAnswer = caesarAnswer.value.trim().toLowerCase();
     const correctAnswer = "фаликула кукарачи";
@@ -191,7 +192,7 @@ caesarSubmit.addEventListener('click', () => {
             setTimeout(() => { showFinal(); }, 200);
         }, 800);
     } else {
-        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: сдвиг +3 (или -3 по Цезарю)';
+        caesarFeedback.innerHTML = '❌ Неправильно. Попробуй ещё раз! Подсказка: шифр Цезаря со сдвигом 3 (а→г, б→д и т.д.)';
         caesarFeedback.style.color = '#e0a060';
         caesarAnswer.value = '';
     }
